@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
+    <meta content="telephone=no" name="format-detection">
+    <title>上学路上</title>
+	<link rel="stylesheet" href="js/swiper3.08.min.css">
+	<link rel="stylesheet" href="css/global.css">
+	<style>
+	</style>
+</head>
+<body>
+	<div id="loading-panel" class="loading-panel active">
+		<div class="boy-panel">
+			<div class="boy dark"></div>
+		</div>
+		<p id="loading-count">0%</p>
+		<p>打开声音或耳机效果更佳</p>
+	</div>
+	<div class="music on"></div>
+	<div id="container" class="hide">
+		<div id="mySwipe" style="max-width:500px;margin:0 auto" class="swiper-container">
+			<div class="swiper-wrapper">
+				<div id="swipe-box1" class="swiper-slide">
+					<div class="bg"></div>
+					<div class="boy-panel"><div class="boy dark"></div></div>
+					<div class="clouds"></div>
+					<div class="tree"></div>
+					<div class="star"></div>
+					<div class="moon"></div>
+					<div class="stone"></div>
+					<div class="text">
+						<em></em><em></em><em></em><em></em><em></em><em></em><em></em>
+					</div>
+					<a href="javascript:void(0)" class="click" id="scene1"></a>
+				</div>
+				<div id="swipe-box2" class="swiper-slide">
+					<div class="boy-panel"><div class="boy"></div></div>
+					<div class="clouds"></div>
+					<div class="alice"></div>
+					<div class="teapot"></div>
+					<div class="moon"></div>
+					<div class="alice-pre"></div>
+					<div class="hat"></div>
+					<div class="rabbit"></div>
+					<div class="star"></div>
+					<a href="javascript:void(0)" class="click" id="scene2"></a>
+				</div>
+				<div id="swipe-box3" class="swiper-slide">
+					<div class="p4">
+						<div class="pig"></div>
+						<div class="boy-panel"><div class="boy monkey"></div></div>
+						<div class="shifu"></div>
+						<div class="shaseng"></div>
+					</div>
+					<div class="clouds"></div>
+					<i class="sun"></i>
+					<div class="hills"></div>
+					<div class="trip-hill"></div>
+					<div class="tower"></div>
+				</div>
+				<div id="swipe-box4" class="swiper-slide">
+					<div class="boy-panel"><div class="boy"></div></div>
+					<div class="girl"></div>
+					<a href="javascript:void(0)" class="click-girl"></a>
+					<div class="clouds"></div>
+					<i class="c5"></i>
+					<i class="c6"></i>
+					<div class="rainbow"></div>
+					<div class="pan-hills"></div>
+					<div class="pan-pre"></div>
+				</div>
+				<div id="swipe-box5" class="swiper-slide">
+					<div class="clouds"></div>
+					<div class="road-txt"></div>
+					<div class="family"></div>
+				</div>
+			</div>
+		</div>
+		<footer>
+			<p>已有<em>12546</em>人送出故事盒子</p>
+			<a href="javascript:void(0)" id="donate-btn" class="donate-btn"><i></i></a>
+			<div>
+				<div class="checkbox checked">
+					<input type="checkbox" checked="checked">	
+				</div>
+				同意并接受<a href="http://gongyi.qq.com/m/html5/about_1.htm">《腾讯公益网用户协议》</a>
+				<a href="javascript:void(0)" onclick="showPanel('rule-panel')" class="rule">活动规则</a>
+			</div>
+		</footer>
+    </div>
+    <div id="share-panel" class="share-panel mark">
+    	<div class="story-box"></div>
+    </div>
+    <div id="setmoney-panel" class="setmoney-panel mark">
+    	<div class="setmoney-dialog">
+    		<a href="javascript:void(0)" class="dialog-close"></a>
+    		<p>请输入自定义金额</p>
+    		<div class="input">
+    			<input type="text" /><span>元</span>
+    		</div>
+    		<a href="javascript:void(0)" id="setmoney-donate-btn" class="dialog-btn">爱心捐赠</a>
+    	</div>
+    </div>
+    <div id="donate-panel" class="donate-panel mark">
+    	<div class="donate-dialog">
+    		<a href="javascript:void(0)" class="dialog-close"></a>
+    		<h3>请选择送出的故事盒子个数</h3>
+    		<p class="info">每100元能给1位留守儿童送去1个故事盒子</p>
+    		<div class="box-desc">
+    			<p>内含精选社会知名人士和志愿者所朗读的有<br/>疗育效果的MP3读物、MP3播放器和耳机</p>
+    		</div>
+    		<ul>
+    			<li><a href="javascript:void(0)"><em>1/5个</em>20元</a></li>
+    			<li><a href="javascript:void(0)"><em>1/2个</em>50元</a></li>
+    			<li><a href="javascript:void(0)"><em>1个</em>100元</a></li>
+    			<li class="next"><a href="javascript:void(0)"><em>其他</em>自定义金额</a></li>
+    		</ul>
+    		<a href="https://mp.weixin.qq.com/s?__biz=MjM5NjA2MTIzMg==&mid=207027176&idx=3&sn=50aaeda6c99454117d8fc66eb39ec800&key=c76941211a49ab58b4589b775adc9dbc4652a347e5875e5dbace9dcccb5095076bb37c857809070aa879ad035743695c&ascene=1&uin=MTQ3MjExNjg2MA%3D%3D&devicetype=iPhone+OS8.3&version=16020313&nettype=WIFI&fontScale=100&pass_ticket=5N%2FDcDp6Vn%2B4Hw1DMexQ65O0OkEY4bkT9V3%2FRGH82kc%2Bb7IYa%2FllO0bt5EvJzgsJ" class="volunteer-link"></a>
+    	</div>
+    </div>
+    <div id="rule-panel" class="rule-panel mark">
+    	<div class="rule-dialog">
+    		<a href="javascript:void(0)" class="dialog-close"></a>
+    		<h3>活动规则</h3>
+    		<ul>
+    			<li>1、活动时间：2015年6月01日-9月01日。</li>
+    			<li>2、善款使用：每100元爱心捐赠可为1位留守儿童送去1个故事盒子——把精选的、有疗育效果的读物朗读并录制下来，剪辑配乐后放进我们的“故事盒子”，让它成为孩子的心灵陪伴和驱散阴霾的武器。</li>
+    			<li>3、故事盒子的发放对象为云南、贵州、青海、广西、四川、重庆、河南、甘肃的74所中小学学校共29877名留守儿童。</li>
+    			<li>4、本活动由上学路上儿童心灵关爱中心发起并负责执行，由中华少年儿童慈善救助基金会公募支持（善款由该基金会接收）。</li>
+    			<li>5、在法律允许范围内腾讯公益拥有本活动最终解释权。有任何问题或疑问，请联系客服（邮箱：qykefu@qq.com）,我们将尽快和您联系。</li>
+    			<li>6、如需了解项目详情，请点击<a href="http://gongyi.qq.com/succor/detail.htm?id=3590">项目进展</a>。</li>
+    		</ul>
+    	</div>
+    </div>
+    <div id="result-panel" class="result-panel">
+    	<div class="donate-result"><img src="images/user.png" alt=""><span>CYY</span></div>
+    	<footer>
+    		<p>你是第<em>12546</em>位送出故事盒子的人</p>
+    		<div>
+    			<a href="javascript:void(0)" id="wxzone-share-btn"></a>
+    			<a href="javascript:void(0)" id="wxfriend-share-btn"></a>
+    		</div>
+    		<a href="https://mp.weixin.qq.com/s?__biz=MjM5NjA2MTIzMg==&mid=207027176&idx=3&sn=50aaeda6c99454117d8fc66eb39ec800&key=c76941211a49ab58b4589b775adc9dbc4652a347e5875e5dbace9dcccb5095076bb37c857809070aa879ad035743695c&ascene=1&uin=MTQ3MjExNjg2MA%3D%3D&devicetype=iPhone+OS8.3&version=16020313&nettype=WIFI&fontScale=100&pass_ticket=5N%2FDcDp6Vn%2B4Hw1DMexQ65O0OkEY4bkT9V3%2FRGH82kc%2Bb7IYa%2FllO0bt5EvJzgsJ" class="volunteer-link"></a>
+    	</footer>
+    </div>
+    <div class="hide">
+    	<audio src="audio/default-bg.aac" id="audio-panel" autoplay="true"></audio>
+    </div>
+    <script src="js/zepto.min.js"></script>
+	<script src="js/swiper3.0.8.min.js"></script>
+	<script>
+		// reset size 
+		(function (doc, win) {
+          var docEl = doc.documentElement,
+            resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+            recalc = function () {
+              var clientWidth = docEl.clientWidth;
+              if (!clientWidth) return;
+              docEl.style.fontSize = 20 * (clientWidth / 320) + 'px';
+            };
+
+          if (!doc.addEventListener) return;
+          win.addEventListener(resizeEvt, recalc, false);
+          doc.addEventListener('DOMContentLoaded', recalc, false);
+        })(document, window);
+
+        /**
+          * 根据给定的ID添加active样式来展示
+          */
+        function showPanel(id){
+        	$('.mark.active').removeClass('active');
+        	$('#'+id).addClass("active");
+        }
+
+        var Common = {};
+        var timer = null;
+        window.onload = function(){
+        	// load resource
+        	var images = ['alice.gif', 'girl.gif', 'monkey.gif', 'pig.gif', 'shaseng.gif', 'shifu.gif', 'walk-boy.gif', 'walk-boy-colorful.gif', 'bg.jpg', 'bg2.jpg', 'bg3.jpg', 'bg4.jpg', 'family-bg.jpg', 'thx-bg.jpg', 'alice-pre-bg.png', 'clouds-all.png', 'clouds-big.png', 'dialog.png', 'family.png', 'pan-middle.png','pre-all.png', 'share.png', 'share-txt.png', 'teapot.png', 'text.png', 'thx-flowers.png', 'thx-txt.png', 'tree.png', 'trip-hill.png'];
+        	console.log(images.length);
+        	var i = 0;
+        	var loadingPro = 0;
+        	for(i = 0; i <images.length; i++){
+        		var imgVo = new Image();
+        		imgVo.src = './images/' + images[i];
+        		if(imgVo.complete){
+        			loadingPro += 3;
+        			$('#loading-count').html(loadingPro + '%');
+        		}else{
+        			imgVo.onload = function(){
+        				loadingPro += 3;
+        				$('#loading-count').html(loadingPro + '%');
+        			}
+        		}
+        	}
+        	if(i == images.length){
+        		$('#loading-count').html('100%');
+        		$('#loading-panel').removeClass('active');
+        		$('#container').removeClass('hide');
+        	}
+
+        	// swipe
+	        var swiper = new Swiper('.swiper-container', {
+	        	pagination: '.swiper-pagination',
+	        	paginationClickable: '.swiper-pagination',
+	        	spaceBetween: 30,
+	        	width: window.innerWidth,
+	        	height: window.innerHeight,
+	        	effect: 'fade',
+				onSlideChangeEnd: function(swiper){
+	        		var index = swiper.snapIndex;
+	        		clearTimeout(timer);
+
+	        		console.log(index);
+	        		var audio = document.getElementById('audio-panel');
+	        		if(index<5){
+		        		var audios = ['default-bg.aac', 'alice-bg.aac', 'monkey.aac', 'peter.aac'];
+		        		audio.src = 'audio/' + (audios[index] || 'default-bg.aac');
+	        		}
+	        		if(index==0){
+	        			$('#swipe-box1 .boy').removeClass('stand');
+	        			timer = setTimeout(function(){
+	        				$('#swipe-box1 .boy').addClass('stand');
+	        			}, 14000);
+	        		}
+	        		if(index==1){
+	        			timer = setTimeout(function(){
+	        				$('#swipe-box2 .boy').addClass('stand')
+	        				$('#swipe-box2 .hat').addClass('shake');
+	        			},10000);
+	        			$('#swipe-box2 .hat, #scene2').click(function(){
+	        				$('#audio-panel')[0].src = 'audio/click.wav';
+	        				$('#swipe-box2 .rabbit').removeClass('run').addClass('run');
+	        				$('#swipe-box2 .alice').removeClass('run').addClass('run');
+	        				setTimeout(function(){
+	        					$('#audio-panel')[0].src = 'audio/run.aac';
+	        				}, 900);
+	        				setTimeout(function(){
+	        					swiper.slideNext();
+	        				},4000);
+	        			});
+	        		}
+	        		if(index==2){
+	        			timer = setTimeout(function(){
+	        				swiper.slideNext();
+	        			}, 15000);
+	        			$('#swipe-box4 .girl, #swipe-box4 .click-girl').show();
+	        		}
+	        		if(index==3){
+	        			$('#swipe-box4 .boy').removeClass('pan').removeClass('stand');
+	        			$('#swipe-box4 .boy-panel').removeClass('bg').removeClass('fling').addClass("nofling");
+	        			timer = setTimeout(function(){
+	        				$('#swipe-box4 .boy').addClass('stand');
+	        				$('#swipe-box4').addClass('nomove');
+	        			}, 8500);
+	        		}
+	        		if(index==4){
+	        			$('#swipe-box4 .girl, #swipe-box4 .click-girl').show();
+	        		}
+	        	}
+	        });
+
+			timer = setTimeout(function(){
+				$('#swipe-box1 .boy').addClass('stand');
+			}, 14000); //init first boy. stand
+	        $('.next-btn, #scene1').tap(function(){
+				swiper.slideNext();
+	        });
+	        // 绑定关闭事件
+	        $('.dialog-close').tap(function(){
+        		$('.mark.active').removeClass('active');
+        	});
+	        // 点击“送他一个盒子”
+	        var donateBtn = document.getElementById('donate-btn');
+	        donateBtn.addEventListener("touchend", function(){
+	        	timer = setTimeout(function(){
+	        		$(this).addClass('active');
+	        		showPanel('donate-panel');
+	        	},100);
+	        	
+	        });
+
+	        // 选择捐赠金额
+	        $('#donate-panel ul li, #setmoney-donate-btn').not('.next').tap(function(){
+	        	$('#container').addClass('hide');
+	        	$('.mark.active').removeClass('active');
+	        	$('#result-panel').addClass('active');
+	        });
+	        // 选择其他金额
+	        $('#donate-panel ul li.next').tap(function(){
+	        	showPanel('setmoney-panel');
+	        });
+	        // 分享好友圈和分享给朋友
+	        $('#wxzone-share-btn, #wxfriend-share-btn').tap(function(){
+	        	showPanel('share-panel');
+	        });
+	        // 音乐关闭/开启
+	        $('.music').tap(function(){
+	        	$(this).toggleClass('off').toggleClass('on');
+	        	if($(this).is('.off')){
+	        		$('#audio-panel')[0].pause();
+	        	}else{
+	        		$('#audio-panel')[0].play();
+	        	}
+	        });
+	        // checkbox样式处理
+	        $('.checkbox').tap(function(){
+	        	$(this).toggleClass('checked');
+	        	var checked = $(this).is('.checked');
+	        	$(this).find('input[type=checkbox]').attr('checked', checked);
+	        });
+
+	        $('#swipe-box4 .click-girl, #swipe-box4 .boy, #swipe-box4 .girl').tap(function(){
+	        	$('#swipe-box4 .girl, #swipe-box4 .click-girl').hide();
+	        	// 切换音乐
+	        	$('#audio-panel')[0].src = 'audio/girl.wav';
+	        	$('#swipe-box4').addClass('move').removeClass('nomove');
+	        	$('#swipe-box4 .boy-panel').addClass('bg');
+	        	$('#swipe-box4 .boy').addClass('pan');
+	        	timer = setTimeout(function(){
+	        		$('#swipe-box4 .boy-panel').removeClass("nofling").addClass('fling');
+	        		timer = setTimeout(function(){
+	        			swiper.slideNext();
+	        		},12000);
+	        	},800);
+	        });
+
+        }
+
+	</script>
+</body>
+</html>
